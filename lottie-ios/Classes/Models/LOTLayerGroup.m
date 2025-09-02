@@ -38,8 +38,20 @@
                                       withAssetGroup:assetGroup
                                        withFramerate:framerate];
     [layers addObject:layer];
+    /*
     modelMap[layer.layerID] = layer;
     if (layer.referenceID) {
+      referenceMap[layer.referenceID] = layer;
+    }
+    */
+    // 加入防呆檢查，避免 key 為 nil 導致 crash
+    if (layer.layerID != nil) {
+      modelMap[layer.layerID] = layer;
+    } else {
+      NSLog(@"⚠️ Lottie Warning: layer.layerID 為 nil，該圖層可能無法正確載入。layerJSON = %@", layerJSON);
+    }
+
+    if (layer.referenceID != nil) {
       referenceMap[layer.referenceID] = layer;
     }
   }
