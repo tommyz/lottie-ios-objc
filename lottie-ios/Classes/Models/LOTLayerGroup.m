@@ -46,9 +46,11 @@
     */
     // 加入防呆檢查，避免 key 為 nil 導致 crash
     if (layer.layerID != nil) {
+//      NSLog(@"layer.layerID=%@",layer.layerID);
+//      NSLog(@"layerJSON=%@",layerJSON);
       modelMap[layer.layerID] = layer;
     } else {
-      NSLog(@"⚠️ Lottie Warning: layer.layerID 為 nil，該圖層可能無法正確載入。layerJSON = %@", layerJSON);
+//      NSLog(@"⚠️ Lottie Warning: layer.layerID 為 nil，該圖層可能無法正確載入。layerJSON = %@", layerJSON);
     }
 
     if (layer.referenceID != nil) {
