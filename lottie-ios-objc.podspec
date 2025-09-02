@@ -42,16 +42,7 @@ For the first time, designers can create and ship beautiful animations without a
   s.public_header_files = 'lottie-ios/Classes/PublicHeaders/*.h'
   s.ios.frameworks = 'UIKit'
   s.osx.frameworks = ['AppKit', 'CoreVideo']
-  #s.module_name = 'Lottie'
-  #s.header_dir = 'Lottie'
-  # 🔑 讓 CocoaPods 生成「不同名稱」的模組與產品，避免和官方 Lottie 打架
-  #s.module_name          = 'LottieObjC'
-  #s.header_dir           = 'LottieObjC'         # 匯入路徑會變成 <LottieObjC/LOTAnimationView.h>
-  s.static_framework     = true                 # 建議用靜態 framework，降低衝突機率
-  # 進一步保險，強制產物名稱/模組名一致
-  #s.pod_target_xcconfig  = {
-  #  'DEFINES_MODULE'         => 'YES',
-  #  'PRODUCT_NAME'           => 'LottieObjC',
-  #  'PRODUCT_MODULE_NAME'    => 'LottieObjC'
-  #}
+  s.resource_bundles = {
+    'LottieObjcPrivacyInfo' => ['Sources/PrivacyInfo.xcprivacy'],
+  }
 end
